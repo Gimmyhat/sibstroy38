@@ -1,0 +1,1923 @@
+<!-- ============================================================
+  СибСтрой38 — Tilda T123 embed (v.2026.05)
+  Скопируйте всё содержимое от строки COPY-START до COPY-END
+  и вставьте в блок T123 «Другое → HTML-код» на странице Tilda.
+  Блок самодостаточный: подгружает шрифты с CDN, все стили
+  изолированы префиксом .sbs38-root, скрипт обёрнут в IIFE.
+============================================================ -->
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>СибСтрой38 — Tilda T123 embed (preview)</title>
+<style>
+  /* faux-Tilda chrome — НЕ копировать в T123 */
+  body { margin: 0; background: #f7f6f3; font-family: -apple-system, system-ui, sans-serif; }
+  .preview-note {
+    background: #15171a; color: #c98a1e;
+    padding: 14px 24px; font-family: ui-monospace, monospace; font-size: 12px;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    border-bottom: 1px solid #c98a1e;
+  }
+  .preview-note b { color: #eceae5; }
+</style>
+</head>
+<body>
+
+<div class="preview-note">
+  <b>Превью встроенного блока T123.</b>
+  Это та же страница, что в index.html — но всё упаковано в один блок и изолировано префиксом
+  <code style="color:#fff">.sbs38-root</code>.
+  Копируйте содержимое между маркерами <code style="color:#fff">COPY-START</code> и <code style="color:#fff">COPY-END</code> ниже.
+</div>
+
+<!-- ▼▼▼ COPY-START ▼▼▼ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* ---- T123 local reset (scoped) ---- */
+.sbs38-root { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+.sbs38-root, .sbs38-root *, .sbs38-root *::before, .sbs38-root *::after { box-sizing: border-box; }
+.sbs38-root img, .sbs38-root svg { display: block; max-width: 100%; }
+.sbs38-root a { color: inherit; text-decoration: none; }
+.sbs38-root button { font: inherit; cursor: pointer; }
+.sbs38-root input, .sbs38-root textarea, .sbs38-root select, .sbs38-root button { font: inherit; color: inherit; }
+/* anchor smooth scroll only for our anchors */
+.sbs38-root { scroll-behavior: smooth; }
+
+/* =========================================================
+   СибСтрой38 — Engineering blueprint direction
+   Vanilla CSS, mobile-first responsive, no framework.
+   ========================================================= */
+
+.sbs38-root {
+  --paper: #eceae5;
+  --paper-deep: #e3e0d8;
+  --paper-line: #d6d3cc;
+  --ink: #15171a;
+  --ink-soft: #5a5d63;
+  --ink-mute: #8a8d92;
+  --concrete: #a3a39a;
+  --ochre: #c98a1e;
+  --ochre-deep: #8a5d10;
+  --ochre-soft: #e8b864;
+  --danger: #b5462a;
+
+  --grid: 32px;
+  --grid-color: rgba(21, 23, 26, 0.05);
+
+  --container: 1240px;
+  --pad-x: clamp(20px, 5vw, 72px);
+
+  --font-sans: 'Manrope', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  --shadow-soft: 0 1px 0 rgba(21,23,26,0.06), 0 10px 30px -20px rgba(21,23,26,0.25);
+}
+
+/* ---- Reset ---- */
+.sbs38-root *, .sbs38-root *::before, .sbs38-root *::after { box-sizing: border-box; }
+.sbs38-root img, .sbs38-root svg { display: block; max-width: 100%; }
+.sbs38-root button { font: inherit; cursor: pointer; }
+.sbs38-root a { color: inherit; text-decoration: none; }
+.sbs38-root input, .sbs38-root textarea, .sbs38-root select, .sbs38-root button { font: inherit; color: inherit; }
+
+.sbs38-root {
+  font-family: var(--font-sans);
+  color: var(--ink);
+  background: var(--paper);
+  background-image: linear-gradient(var(--grid-color) 1px, transparent 1px),
+                    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+  background-size: var(--grid) var(--grid);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ---- Typography ---- */
+.sbs38-root .display {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 0.94;
+}
+.sbs38-root .mono { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+.sbs38-root .label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.sbs38-root .label.ochre { color: var(--ochre-deep); }
+.sbs38-root .label.on-dark { color: var(--ochre-soft); }
+
+.sbs38-root h1, .sbs38-root h2, .sbs38-root h3, .sbs38-root h4 { margin: 0; }
+
+/* ---- Layout ---- */
+.sbs38-root .container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding-left: var(--pad-x);
+  padding-right: var(--pad-x);
+}
+.sbs38-root section { position: relative; }
+
+/* ---- Buttons ---- */
+.sbs38-root .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px 22px;
+  border: 1.5px solid var(--ink);
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: transform .15s ease, background .15s ease, color .15s ease;
+}
+.sbs38-root .btn:hover { background: var(--ochre); border-color: var(--ochre); color: var(--ink); }
+.sbs38-root .btn:active { transform: translateY(1px); }
+
+.sbs38-root .btn-ghost {
+  background: transparent;
+  color: var(--ink);
+}
+.sbs38-root .btn-ghost:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+.sbs38-root .btn-ochre {
+  background: var(--ochre);
+  border-color: var(--ochre);
+  color: var(--ink);
+}
+.sbs38-root .btn-ochre:hover { background: var(--ochre-deep); border-color: var(--ochre-deep); color: var(--paper); }
+
+.sbs38-root .btn .arrow { font-size: 14px; }
+
+/* ---- Engineering corners ---- */
+.sbs38-root .framed {
+  position: relative;
+  border: 1.5px solid var(--ink);
+}
+.sbs38-root .framed::before, .sbs38-root .framed::after, .sbs38-root .framed > .corner-bl, .sbs38-root .framed > .corner-br {
+  content: "";
+  position: absolute;
+  width: 10px; height: 10px;
+  border: 1.5px solid var(--ink);
+  pointer-events: none;
+}
+.sbs38-root .framed::before { top: -1px; left: -1px; border-right: none; border-bottom: none; }
+.sbs38-root .framed::after { top: -1px; right: -1px; border-left: none; border-bottom: none; }
+.sbs38-root .framed > .corner-bl { bottom: -1px; left: -1px; border-right: none; border-top: none; }
+.sbs38-root .framed > .corner-br { bottom: -1px; right: -1px; border-left: none; border-top: none; }
+
+.sbs38-root .tag {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 5px 9px;
+  border: 1px solid var(--ink);
+  color: var(--ink);
+}
+.sbs38-root .tag.ochre { color: var(--ochre-deep); border-color: var(--ochre-deep); }
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+.sbs38-root .topbar {
+  border-bottom: 1px solid var(--ink);
+  background: var(--paper);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+}
+.sbs38-root .topbar-inner {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 16px;
+  padding: 14px 0;
+  align-items: center;
+}
+.sbs38-root .topbar-left { color: var(--ink-soft); }
+.sbs38-root .topbar-right { text-align: right; color: var(--ink-soft); }
+.sbs38-root .topbar .brand {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  font-size: 18px;
+  text-transform: none;
+}
+.sbs38-root .topbar .brand .accent { color: var(--ochre); }
+
+.sbs38-root .navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--paper);
+  border-bottom: 1px solid var(--ink);
+}
+.sbs38-root .navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 14px 0;
+}
+.sbs38-root .navbar nav {
+  display: flex;
+  gap: 28px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.sbs38-root .navbar nav a { color: var(--ink); transition: color .15s ease; }
+.sbs38-root .navbar nav a:hover { color: var(--ochre-deep); }
+.sbs38-root .navbar .phone {
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+.sbs38-root .navbar .phone a { display: flex; align-items: center; gap: 8px; }
+.sbs38-root .navbar .phone .pulse {
+  width: 8px; height: 8px; background: var(--ochre);
+  display: inline-block;
+  box-shadow: 0 0 0 0 rgba(201,138,30,0.5);
+  animation: pulse 1.8s infinite;
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(201,138,30,0.5); }
+  70% { box-shadow: 0 0 0 8px rgba(201,138,30,0); }
+  100% { box-shadow: 0 0 0 0 rgba(201,138,30,0); }
+}
+
+.sbs38-root .nav-toggle {
+  display: none;
+  background: transparent;
+  border: 1.5px solid var(--ink);
+  padding: 8px 12px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.sbs38-root .hero {
+  padding: clamp(36px, 6vw, 72px) 0 clamp(48px, 6vw, 64px);
+  border-bottom: 1px solid var(--ink);
+}
+.sbs38-root .hero-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: clamp(28px, 4vw, 56px);
+  align-items: center;
+}
+.sbs38-root .hero-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: clamp(20px, 3vw, 30px); }
+.sbs38-root .hero h1 {
+  font-size: clamp(48px, 9vw, 112px);
+  letter-spacing: -0.04em;
+}
+.sbs38-root .hero h1 .ochre { color: var(--ochre); }
+.sbs38-root .hero .lead {
+  max-width: 560px;
+  margin-top: clamp(20px, 3vw, 28px);
+  font-size: clamp(15px, 1.4vw, 17px);
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+.sbs38-root .hero-specs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(16px, 3vw, 48px);
+  margin-top: clamp(28px, 4vw, 40px);
+  max-width: 720px;
+}
+.sbs38-root .hero-specs .label { margin-bottom: 6px; }
+.sbs38-root .hero-specs .val { font-size: clamp(16px, 1.7vw, 20px); font-weight: 600; }
+
+.sbs38-root .hero-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: clamp(28px, 4vw, 40px); }
+
+/* Blueprint */
+.sbs38-root .blueprint {
+  padding: 20px;
+  background: var(--paper);
+}
+.sbs38-root .blueprint-head {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.sbs38-root .blueprint svg { width: 100%; height: auto; margin-top: 10px; }
+.sbs38-root .blueprint-legend {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+  padding-top: 12px;
+  margin-top: 8px;
+  border-top: 1px solid var(--ink);
+  font-family: var(--font-mono);
+  font-size: 11px;
+}
+
+/* ============================================================
+   SPECS BAR
+   ============================================================ */
+.sbs38-root .specs-bar {
+  background: var(--ink);
+  color: var(--paper);
+  border-bottom: 1px solid var(--ink);
+}
+.sbs38-root .specs-bar-inner {
+  padding: clamp(24px, 3vw, 32px) 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+}
+.sbs38-root .specs-bar .item {
+  padding: 0 clamp(12px, 2vw, 24px);
+  border-left: 1px solid rgba(255,255,255,0.12);
+}
+.sbs38-root .specs-bar .item:first-child { border-left: none; padding-left: 0; }
+.sbs38-root .specs-bar .num {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: var(--ochre-soft);
+}
+.sbs38-root .specs-bar .big {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: clamp(28px, 3.5vw, 48px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-top: 6px;
+  line-height: 1;
+}
+.sbs38-root .specs-bar .desc { font-family: var(--font-mono); font-size: 11px; color: var(--concrete); margin-top: 8px; }
+
+/* ============================================================
+   PRINCIPLES (why us)
+   ============================================================ */
+.sbs38-root .principles {
+  padding: clamp(64px, 8vw, 96px) 0;
+  border-bottom: 1px solid var(--ink);
+}
+.sbs38-root .section-head {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: end;
+  margin-bottom: clamp(36px, 5vw, 56px);
+}
+.sbs38-root .section-head h2 {
+  font-size: clamp(32px, 5vw, 60px);
+  letter-spacing: -0.03em;
+  line-height: 1;
+  max-width: 880px;
+}
+.sbs38-root .section-head .meta {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-soft);
+  text-align: right;
+  letter-spacing: 0.06em;
+  line-height: 1.8;
+}
+.sbs38-root .section-head h2 .ochre { color: var(--ochre); }
+
+.sbs38-root .principles-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--ink);
+}
+.sbs38-root .principle {
+  padding: 32px 24px 32px 0;
+  border-right: 1px solid var(--paper-line);
+  position: relative;
+}
+.sbs38-root .principle:last-child { border-right: none; padding-right: 0; }
+.sbs38-root .principle:not(:first-child) { padding-left: 24px; }
+.sbs38-root .principle .num {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ochre-deep);
+  letter-spacing: 0.18em;
+}
+.sbs38-root .principle h3 {
+  font-size: clamp(18px, 1.5vw, 22px);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-top: 18px;
+  line-height: 1.2;
+}
+.sbs38-root .principle p {
+  margin-top: 14px;
+  font-size: 14px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+.sbs38-root .principle .icon {
+  margin-top: 24px;
+  height: 80px;
+}
+
+/* ============================================================
+   TECHNOLOGY
+   ============================================================ */
+.sbs38-root .tech {
+  padding: clamp(64px, 8vw, 96px) 0;
+  background: var(--paper-deep);
+  border-bottom: 1px solid var(--ink);
+}
+.sbs38-root .tech-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: clamp(28px, 4vw, 56px);
+}
+.sbs38-root .tech-layers {
+  position: relative;
+  background: var(--paper);
+  padding: clamp(24px, 3vw, 32px);
+}
+.sbs38-root .layer {
+  display: grid;
+  grid-template-columns: 64px 80px 1fr;
+  gap: 18px;
+  align-items: center;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--paper-line);
+}
+.sbs38-root .layer:last-child { border-bottom: none; }
+.sbs38-root .layer .lnum {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ochre-deep);
+  letter-spacing: 0.18em;
+}
+.sbs38-root .layer .lthick {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 22px;
+  font-weight: 700;
+  text-align: right;
+}
+.sbs38-root .layer .lthick small { font-size: 11px; color: var(--ink-soft); font-weight: 400; margin-left: 4px; }
+.sbs38-root .layer .lname { font-weight: 600; }
+.sbs38-root .layer .ldesc { font-size: 13px; color: var(--ink-soft); margin-top: 4px; }
+
+.sbs38-root .tech-side h2 {
+  font-size: clamp(28px, 4vw, 44px);
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  font-weight: 800;
+}
+.sbs38-root .tech-side h2 .ochre { color: var(--ochre); }
+.sbs38-root .tech-side .lead {
+  margin-top: 20px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+.sbs38-root .tech-side ul {
+  list-style: none;
+  padding: 0;
+  margin: 28px 0 0;
+}
+.sbs38-root .tech-side ul li {
+  position: relative;
+  padding-left: 24px;
+  padding-bottom: 12px;
+  font-size: 14px;
+}
+.sbs38-root .tech-side ul li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 8px;
+  width: 12px; height: 1.5px;
+  background: var(--ochre);
+}
+
+/* ============================================================
+   PROCESS — 7 stages
+   ============================================================ */
+.sbs38-root .process {
+  padding: clamp(64px, 8vw, 96px) 0;
+  border-bottom: 1px solid var(--ink);
+}
+.sbs38-root .stages {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+}
+.sbs38-root .stage {
+  padding: 18px;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: var(--paper);
+  position: relative;
+}
+.sbs38-root .stage .snum { font-family: var(--font-mono); font-size: 11px; color: var(--ochre-deep); letter-spacing: 0.18em; }
+.sbs38-root .stage .stitle { font-size: 16px; font-weight: 700; margin-top: 8px; letter-spacing: -0.01em; }
+.sbs38-root .stage .sdays { font-family: var(--font-mono); font-size: 11px; color: var(--ink-soft); align-self: flex-end; }
+.sbs38-root .stage .iso { width: 100%; margin: 8px 0; }
+
+/* ============================================================
+   FEATURED PROJECT
+   ============================================================ */
+.sbs38-root .project {
+  padding: clamp(64px, 8vw, 96px) 0;
+  background: var(--ink);
+  color: var(--paper);
+  border-bottom: 1px solid var(--ink);
+  background-image: none;
+}
+.sbs38-root .project .section-head h2 { color: var(--paper); }
+.sbs38-root .project .section-head .meta { color: var(--concrete); }
+
+.sbs38-root .project-body {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 24px;
+}
+.sbs38-root .gallery {
+  position: relative;
+  background: #0f1114;
+  min-height: 460px;
+  overflow: hidden;
+}
+.sbs38-root .gallery-slide {
+  position: absolute; inset: 0;
+  opacity: 0;
+  transition: opacity .5s ease;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  padding: 24px;
+}
+.sbs38-root .gallery-slide.active { opacity: 1; }
+.sbs38-root .gallery-slide .caption {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(236,234,216,0.7);
+}
+.sbs38-root .gallery-controls {
+  position: absolute; bottom: 24px; right: 24px;
+  display: flex; gap: 8px;
+  z-index: 2;
+}
+.sbs38-root .gallery-controls button {
+  width: 44px; height: 44px;
+  background: rgba(21,23,26,0.6);
+  border: 1px solid rgba(255,255,255,0.18);
+  color: var(--paper);
+  font-family: var(--font-mono);
+  font-size: 16px;
+  backdrop-filter: blur(8px);
+  transition: background .15s ease;
+}
+.sbs38-root .gallery-controls button:hover { background: var(--ochre); border-color: var(--ochre); color: var(--ink); }
+
+.sbs38-root .gallery-counter {
+  position: absolute; top: 24px; left: 24px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: rgba(236,234,216,0.7);
+  letter-spacing: 0.18em;
+  z-index: 2;
+}
+
+.sbs38-root .project-side {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.sbs38-root .spec-card {
+  background: #1d1f23;
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 28px;
+}
+.sbs38-root .spec-card .label { color: var(--ochre-soft); }
+.sbs38-root .spec-card h3 {
+  font-size: 28px;
+  letter-spacing: -0.02em;
+  margin-top: 14px;
+  font-weight: 700;
+}
+.sbs38-root .spec-card .specs-list { margin-top: 20px; }
+.sbs38-root .spec-card .row {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  font-size: 14px;
+}
+.sbs38-root .spec-card .row:last-child { border-bottom: none; }
+.sbs38-root .spec-card .row .k { color: var(--concrete); }
+.sbs38-root .spec-card .row .v { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+
+.sbs38-root .price-card {
+  background: var(--ochre);
+  color: var(--ink);
+  padding: 28px;
+}
+.sbs38-root .price-card .label { color: var(--ochre-deep); }
+.sbs38-root .price-card .price {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 44px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-top: 10px;
+  line-height: 1;
+}
+.sbs38-root .price-card .price small { font-size: 14px; font-weight: 500; letter-spacing: 0; }
+.sbs38-root .price-card p { margin: 14px 0 20px; font-size: 13px; line-height: 1.5; }
+.sbs38-root .price-card .btn { width: 100%; background: var(--ink); border-color: var(--ink); color: var(--paper); }
+.sbs38-root .price-card .btn:hover { background: var(--paper); border-color: var(--paper); color: var(--ink); }
+
+/* ============================================================
+   INCLUDED — what's in 60 000 ₽/m²
+   ============================================================ */
+.sbs38-root .included {
+  padding: clamp(64px, 8vw, 96px) 0;
+  border-bottom: 1px solid var(--ink);
+}
+.sbs38-root .included-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  border: 1.5px solid var(--ink);
+  background: var(--paper);
+}
+.sbs38-root .included-col {
+  padding: clamp(28px, 3vw, 36px);
+}
+.sbs38-root .included-col + .included-col {
+  border-left: 1px solid var(--paper-line);
+}
+.sbs38-root .included-col h3 {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.sbs38-root .included-col.yes h3 { color: var(--ink); }
+.sbs38-root .included-col.no h3 { color: var(--danger); }
+.sbs38-root .included-col h3::before {
+  content: "";
+  width: 14px; height: 14px;
+  border: 1.5px solid currentColor;
+  display: inline-block;
+}
+.sbs38-root .included-col.yes h3::before { background: var(--ink); }
+.sbs38-root .included-col.no h3::before { background: transparent; }
+.sbs38-root .included-col ul { list-style: none; padding: 0; margin: 0; }
+.sbs38-root .included-col li {
+  padding: 12px 0;
+  border-top: 1px solid var(--paper-line);
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  gap: 10px;
+  align-items: baseline;
+  font-size: 15px;
+}
+.sbs38-root .included-col li:last-child { border-bottom: 1px solid var(--paper-line); }
+.sbs38-root .included-col .marker {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+}
+.sbs38-root .included-col.yes .marker { color: var(--ink); }
+.sbs38-root .included-col.no .marker { color: var(--danger); }
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+.sbs38-root .faq {
+  padding: clamp(64px, 8vw, 96px) 0;
+  border-bottom: 1px solid var(--ink);
+}
+.sbs38-root .faq-list {
+  border-top: 1px solid var(--ink);
+}
+.sbs38-root .faq-item { border-bottom: 1px solid var(--paper-line); }
+.sbs38-root .faq-item summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 24px 0;
+  display: grid;
+  grid-template-columns: 40px 1fr auto;
+  gap: 18px;
+  align-items: center;
+}
+.sbs38-root .faq-item summary::-webkit-details-marker { display: none; }
+.sbs38-root .faq-item .qnum {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ochre-deep);
+  letter-spacing: 0.18em;
+}
+.sbs38-root .faq-item .qtext {
+  font-size: clamp(18px, 1.8vw, 22px);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+.sbs38-root .faq-item .plus {
+  width: 28px; height: 28px;
+  border: 1.5px solid var(--ink);
+  display: grid;
+  place-items: center;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  transition: transform .25s ease, background .15s ease, color .15s ease;
+}
+.sbs38-root .faq-item[open] .plus { background: var(--ink); color: var(--paper); transform: rotate(45deg); }
+.sbs38-root .faq-answer {
+  padding: 0 0 28px 58px;
+  max-width: 800px;
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--ink-soft);
+}
+
+/* ============================================================
+   CTA FORM
+   ============================================================ */
+.sbs38-root .cta {
+  padding: clamp(72px, 8vw, 112px) 0;
+  background: var(--ink);
+  color: var(--paper);
+  background-image: none;
+  border-bottom: 1px solid var(--ink);
+}
+.sbs38-root .cta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(36px, 5vw, 64px);
+}
+.sbs38-root .cta h2 {
+  font-size: clamp(40px, 6vw, 76px);
+  letter-spacing: -0.04em;
+  line-height: 0.96;
+  font-weight: 800;
+}
+.sbs38-root .cta h2 .ochre { color: var(--ochre); }
+.sbs38-root .cta .lead {
+  margin-top: 24px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--concrete);
+  max-width: 480px;
+}
+.sbs38-root .cta-contacts {
+  margin-top: clamp(28px, 4vw, 48px);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--concrete);
+  line-height: 1.9;
+}
+.sbs38-root .cta-contacts a { color: var(--paper); border-bottom: 1px solid rgba(255,255,255,0.2); }
+.sbs38-root .cta-contacts a:hover { color: var(--ochre); border-color: var(--ochre); }
+
+/* form */
+.sbs38-root .form {
+  border: 1.5px solid var(--ochre);
+  padding: clamp(24px, 3vw, 32px);
+  background: rgba(255,255,255,0.02);
+  position: relative;
+}
+.sbs38-root .form .label { color: var(--ochre); }
+.sbs38-root .form .form-title {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ochre);
+  margin-bottom: 14px;
+}
+.sbs38-root .field { margin-top: 18px; }
+.sbs38-root .field label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--concrete);
+  margin-bottom: 8px;
+}
+.sbs38-root .field input, .sbs38-root .field textarea, .sbs38-root .field select {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255,255,255,0.18);
+  padding: 10px 0;
+  color: var(--paper);
+  font-size: 15px;
+  outline: none;
+  transition: border-color .15s ease;
+  border-radius: 0;
+  -webkit-appearance: none;
+}
+.sbs38-root .field input::placeholder, .sbs38-root .field textarea::placeholder { color: rgba(255,255,255,0.3); }
+.sbs38-root .field input:focus, .sbs38-root .field textarea:focus, .sbs38-root .field select:focus { border-color: var(--ochre); }
+.sbs38-root .field textarea { resize: vertical; min-height: 60px; }
+.sbs38-root .field.error input, .sbs38-root .field.error textarea, .sbs38-root .field.error select { border-color: var(--danger); }
+.sbs38-root .field .err {
+  display: none;
+  margin-top: 6px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--danger);
+}
+.sbs38-root .field.error .err { display: block; }
+
+.sbs38-root .form .submit {
+  margin-top: 28px;
+  width: 100%;
+  background: var(--ochre);
+  border-color: var(--ochre);
+  color: var(--ink);
+  padding: 18px;
+  font-weight: 700;
+}
+.sbs38-root .form .submit:hover { background: var(--paper); border-color: var(--paper); }
+
+.sbs38-root .form .privacy {
+  margin-top: 14px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  color: var(--concrete);
+  line-height: 1.6;
+}
+
+.sbs38-root .form-success {
+  display: none;
+  padding: 32px;
+  border: 1.5px solid var(--ochre);
+  text-align: center;
+}
+.sbs38-root .form-success.show { display: block; }
+.sbs38-root .form-success .check {
+  width: 56px; height: 56px;
+  border: 1.5px solid var(--ochre);
+  margin: 0 auto 16px;
+  display: grid;
+  place-items: center;
+  color: var(--ochre);
+  font-size: 24px;
+}
+.sbs38-root .form-success h3 { font-size: 24px; margin-bottom: 8px; font-weight: 700; }
+.sbs38-root .form-success p { color: var(--concrete); font-size: 14px; }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.sbs38-root .footer {
+  background: var(--paper);
+  padding: clamp(40px, 5vw, 56px) 0 clamp(24px, 3vw, 32px);
+}
+.sbs38-root .footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 32px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--paper-line);
+}
+.sbs38-root .footer .brand {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  font-size: 22px;
+}
+.sbs38-root .footer .brand .accent { color: var(--ochre); }
+.sbs38-root .footer p.mini { font-size: 13px; color: var(--ink-soft); margin-top: 12px; max-width: 360px; line-height: 1.5; }
+.sbs38-root .footer .col-title {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 14px;
+}
+.sbs38-root .footer ul { list-style: none; padding: 0; margin: 0; }
+.sbs38-root .footer ul li { padding: 6px 0; font-size: 14px; }
+.sbs38-root .footer ul a:hover { color: var(--ochre-deep); }
+.sbs38-root .footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 24px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-soft);
+  letter-spacing: 0.08em;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1080px) {
+  .sbs38-root .stages { grid-template-columns: repeat(4, 1fr); }
+  .sbs38-root .principles-grid { grid-template-columns: repeat(2, 1fr); }
+  .sbs38-root .principle { border-right: 1px solid var(--paper-line); }
+  .sbs38-root .principle:nth-child(2) { border-right: none; padding-right: 0; }
+  .sbs38-root .principle:nth-child(3), .sbs38-root .principle:nth-child(4) { border-top: 1px solid var(--paper-line); }
+}
+
+@media (max-width: 900px) {
+  .sbs38-root .topbar-inner { grid-template-columns: 1fr; gap: 6px; text-align: left; }
+  .sbs38-root .topbar-right { text-align: left; }
+
+  .sbs38-root .navbar nav { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; gap: 0; background: var(--paper); border-bottom: 1px solid var(--ink); padding: 12px var(--pad-x); }
+  .sbs38-root .navbar nav.open { display: flex; }
+  .sbs38-root .navbar nav a { padding: 14px 0; border-bottom: 1px solid var(--paper-line); }
+  .sbs38-root .nav-toggle { display: inline-flex; }
+
+  .sbs38-root .hero-grid { grid-template-columns: 1fr; }
+  .sbs38-root .hero-specs { grid-template-columns: repeat(3, 1fr); }
+
+  .sbs38-root .specs-bar-inner { grid-template-columns: repeat(2, 1fr); gap: 0; }
+  .sbs38-root .specs-bar .item { padding: 20px clamp(12px, 2vw, 24px); border-top: 1px solid rgba(255,255,255,0.12); }
+  .sbs38-root .specs-bar .item:nth-child(odd) { border-left: none; }
+  .sbs38-root .specs-bar .item:nth-child(-n+2) { border-top: none; }
+  .sbs38-root .specs-bar .item:nth-child(5) { grid-column: 1 / -1; border-left: none; }
+
+  .sbs38-root .section-head { grid-template-columns: 1fr; }
+  .sbs38-root .section-head .meta { text-align: left; }
+
+  .sbs38-root .tech-grid { grid-template-columns: 1fr; }
+
+  .sbs38-root .stages { grid-template-columns: repeat(2, 1fr); }
+
+  .sbs38-root .project-body { grid-template-columns: 1fr; }
+  .sbs38-root .gallery { min-height: 320px; }
+
+  .sbs38-root .included-grid { grid-template-columns: 1fr; }
+  .sbs38-root .included-col + .included-col { border-left: none; border-top: 1px solid var(--paper-line); }
+
+  .sbs38-root .cta-grid { grid-template-columns: 1fr; }
+
+  .sbs38-root .footer-grid { grid-template-columns: 1fr 1fr; }
+  .sbs38-root .footer-grid > :first-child { grid-column: 1 / -1; }
+  .sbs38-root .footer-bottom { flex-direction: column; gap: 8px; }
+}
+
+@media (max-width: 560px) {
+  .sbs38-root body { font-size: 15px; }
+  .sbs38-root .hero-specs { grid-template-columns: 1fr 1fr; }
+  .sbs38-root .stages { grid-template-columns: 1fr; }
+  .sbs38-root .principles-grid { grid-template-columns: 1fr; }
+  .sbs38-root .principle { border-right: none; border-bottom: 1px solid var(--paper-line); padding: 28px 0 !important; }
+  .sbs38-root .principle:last-child { border-bottom: none; }
+  .sbs38-root .specs-bar-inner { grid-template-columns: 1fr; }
+  .sbs38-root .specs-bar .item { border-top: 1px solid rgba(255,255,255,0.12); border-left: none !important; padding-left: 0 !important; }
+  .sbs38-root .specs-bar .item:first-child { border-top: none; }
+  .sbs38-root .specs-bar .item:nth-child(5) { grid-column: auto; }
+  .sbs38-root .hero-cta .btn { flex: 1; }
+  .sbs38-root .navbar .phone span:not(.pulse) { display: none; }
+  .sbs38-root .navbar .phone a::before { content: "TEL"; font-size: 11px; }
+  .sbs38-root .footer-grid { grid-template-columns: 1fr; }
+  .sbs38-root .faq-item summary { grid-template-columns: 32px 1fr 28px; gap: 12px; }
+  .sbs38-root .faq-answer { padding-left: 44px; }
+}
+
+</style>
+
+<div class="sbs38-root">
+<!-- =====================================================
+     HEADER
+     ===================================================== -->
+<header>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="topbar-left mono">ООО «ЗАЩИТА» · СРО · ЛИЦЕНЗИЯ МЧС · ОГРН с 2013</div>
+      <div class="brand">СИБСТРОЙ<span class="accent">—38</span></div>
+      <div class="topbar-right mono">ИРКУТСК · 52.2978°N 104.2964°E</div>
+    </div>
+  </div>
+
+  <div class="navbar">
+    <div class="container navbar-inner">
+      <nav id="sbs38-primary-nav">
+        <a href="#process">01 / Этапы</a>
+        <a href="#tech">02 / Технология</a>
+        <a href="#project">03 / Объект</a>
+        <a href="#included">04 / Цена</a>
+        <a href="#faq">05 / Вопросы</a>
+        <a href="#contact">06 / Контакты</a>
+      </nav>
+      <button class="nav-toggle" aria-controls="sbs38-primary-nav" aria-label="Меню">Меню</button>
+      <div class="phone">
+        <a href="tel:+79953235878"><span class="pulse"></span><span>+7 995 32 35 878</span></a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- =====================================================
+     HERO
+     ===================================================== -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="hero-tags">
+        <span class="tag">doc · 01</span>
+        <span class="tag">rev · 2026.05</span>
+        <span class="tag ochre">scale · 1:1</span>
+      </div>
+      <h1 class="display">
+        ДОМ —<br>
+        ЭТО<br>
+        <span class="ochre">ИНЖЕНЕРИЯ.</span>
+      </h1>
+      <p class="lead">
+        Строим дома в Иркутске и области с 2013 года. Считаем как объект, а не как картинку: каждый этап — в смете, в графике, в акте. Газобетон 400 мм, плоская кровля, утепление 400 мм арболит-бетона.
+      </p>
+      <div class="hero-specs">
+        <div>
+          <div class="label">Стены</div>
+          <div class="val">Газобетон 400 мм</div>
+        </div>
+        <div>
+          <div class="label">Перекрытия</div>
+          <div class="val">Ж/Б плиты, +3.350</div>
+        </div>
+        <div>
+          <div class="label">Кровля</div>
+          <div class="val">Арболит 400 мм</div>
+        </div>
+      </div>
+      <div class="hero-cta">
+        <a href="#contact" class="btn">Рассчитать смету <span class="arrow">→</span></a>
+        <a href="#process" class="btn btn-ghost">Как мы работаем</a>
+      </div>
+    </div>
+
+    <!-- Blueprint card -->
+    <div class="blueprint framed">
+      <span class="corner-bl"></span><span class="corner-br"></span>
+      <div class="blueprint-head">
+        <span>drawing · A-101</span>
+        <span>section</span>
+      </div>
+      <svg viewBox="0 0 360 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Разрез дома, спецификация">
+        <defs>
+          <pattern id="sbs38-bgrid" width="20" height="20" patternUnits="userSpaceOnUse">
+            <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(21,23,26,0.08)" stroke-width="0.5"/>
+          </pattern>
+        </defs>
+        <rect width="360" height="460" fill="url(#sbs38-bgrid)"/>
+        <line x1="0" y1="390" x2="360" y2="390" stroke="#15171a" stroke-width="1.5"/>
+        <g stroke="#15171a" stroke-width="1">
+          <line x1="20" y1="390" x2="10" y2="406"/>
+          <line x1="60" y1="390" x2="50" y2="406"/>
+          <line x1="100" y1="390" x2="90" y2="406"/>
+          <line x1="140" y1="390" x2="130" y2="406"/>
+          <line x1="180" y1="390" x2="170" y2="406"/>
+          <line x1="220" y1="390" x2="210" y2="406"/>
+          <line x1="260" y1="390" x2="250" y2="406"/>
+          <line x1="300" y1="390" x2="290" y2="406"/>
+          <line x1="340" y1="390" x2="330" y2="406"/>
+        </g>
+        <rect x="40" y="360" width="280" height="30" fill="none" stroke="#15171a" stroke-width="1.5"/>
+        <rect x="40" y="180" width="280" height="180" fill="none" stroke="#15171a" stroke-width="2"/>
+        <rect x="30" y="160" width="300" height="20" fill="#15171a"/>
+        <rect x="80" y="240" width="60" height="60" fill="none" stroke="#15171a"/>
+        <line x1="80" y1="270" x2="140" y2="270" stroke="#15171a" stroke-width="0.5"/>
+        <line x1="110" y1="240" x2="110" y2="300" stroke="#15171a" stroke-width="0.5"/>
+        <rect x="220" y="240" width="60" height="60" fill="none" stroke="#15171a"/>
+        <line x1="220" y1="270" x2="280" y2="270" stroke="#15171a" stroke-width="0.5"/>
+        <line x1="250" y1="240" x2="250" y2="300" stroke="#15171a" stroke-width="0.5"/>
+        <rect x="160" y="280" width="40" height="80" fill="none" stroke="#15171a"/>
+        <line x1="40" y1="140" x2="320" y2="140" stroke="#c98a1e" stroke-width="1"/>
+        <line x1="40" y1="135" x2="40" y2="145" stroke="#c98a1e"/>
+        <line x1="320" y1="135" x2="320" y2="145" stroke="#c98a1e"/>
+        <text x="180" y="130" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#8a5d10">14 000 мм</text>
+        <line x1="350" y1="180" x2="350" y2="360" stroke="#c98a1e" stroke-width="1"/>
+        <line x1="345" y1="180" x2="355" y2="180" stroke="#c98a1e"/>
+        <line x1="345" y1="360" x2="355" y2="360" stroke="#c98a1e"/>
+        <text x="350" y="275" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#8a5d10" transform="rotate(90 350 275)">6 200 мм</text>
+        <circle cx="40" cy="270" r="10" fill="#eceae5" stroke="#15171a"/>
+        <text x="40" y="274" text-anchor="middle" font-family="JetBrains Mono" font-size="10" fill="#15171a">1</text>
+        <circle cx="20" cy="170" r="10" fill="#eceae5" stroke="#15171a"/>
+        <text x="20" y="174" text-anchor="middle" font-family="JetBrains Mono" font-size="10" fill="#15171a">2</text>
+        <circle cx="340" cy="375" r="10" fill="#eceae5" stroke="#15171a"/>
+        <text x="340" y="379" text-anchor="middle" font-family="JetBrains Mono" font-size="10" fill="#15171a">3</text>
+      </svg>
+      <div class="blueprint-legend">
+        <span>1 — газобетон 400</span>
+        <span>2 — арболит 400</span>
+        <span>3 — отмостка</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     SPECS BAR
+     ===================================================== -->
+<section class="specs-bar">
+  <div class="container specs-bar-inner">
+    <div class="item">
+      <div class="num">01</div>
+      <div class="big">60 000<sup style="font-size:0.4em;vertical-align:top;margin-left:6px;">₽</sup></div>
+      <div class="desc">за м² под ключ</div>
+    </div>
+    <div class="item">
+      <div class="num">02</div>
+      <div class="big">58</div>
+      <div class="desc">дней на дом</div>
+    </div>
+    <div class="item">
+      <div class="num">03</div>
+      <div class="big">12</div>
+      <div class="desc">лет на рынке Иркутска</div>
+    </div>
+    <div class="item">
+      <div class="num">04</div>
+      <div class="big">400</div>
+      <div class="desc">мм газобетон, стены</div>
+    </div>
+    <div class="item">
+      <div class="num">05</div>
+      <div class="big">1</div>
+      <div class="desc">договор · 1 ответственный</div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     PRINCIPLES
+     ===================================================== -->
+<section class="principles" id="why">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="label ochre">01 · подход</div>
+        <h2>Не продаём картинку.<br>Сдаём <span class="ochre">дом.</span></h2>
+      </div>
+      <div class="meta">project: sbs-38<br>since 2013 · Иркутск</div>
+    </div>
+
+    <div class="principles-grid">
+      <div class="principle">
+        <div class="num">01</div>
+        <h3>Один директор —<br>одна ответственность</h3>
+        <p>Кузнецов Артём Владимирович лично ведёт каждый объект с 2013 года. Никаких «менеджеров проекта», никакой передачи по цепочке.</p>
+        <svg class="icon" viewBox="0 0 100 80" fill="none" stroke="#15171a" stroke-width="1.5">
+          <circle cx="50" cy="28" r="14"/>
+          <path d="M20 76 Q50 48 80 76"/>
+          <line x1="20" y1="76" x2="80" y2="76"/>
+        </svg>
+      </div>
+      <div class="principle">
+        <div class="num">02</div>
+        <h3>СРО, лицензия МЧС,<br>прозрачный договор</h3>
+        <p>Юридически — ООО «Защита». Членство в СРО на проектирование и строительство, действующая лицензия. Все документы — в открытом доступе.</p>
+        <svg class="icon" viewBox="0 0 100 80" fill="none" stroke="#15171a" stroke-width="1.5">
+          <path d="M50 8 L82 20 L82 44 Q82 64 50 76 Q18 64 18 44 L18 20 Z"/>
+          <path d="M36 42 L46 52 L66 30"/>
+        </svg>
+      </div>
+      <div class="principle">
+        <div class="num">03</div>
+        <h3>Газобетон 400 мм<br>+ арболит 400 мм</h3>
+        <p>Тёплый контур для иркутской зимы. Не «теплопотери» как абстракция, а конкретный счёт за газ и комфорт −38 °C за окном.</p>
+        <svg class="icon" viewBox="0 0 100 80" fill="none" stroke="#15171a" stroke-width="1.5">
+          <rect x="10" y="30" width="20" height="40"/>
+          <rect x="30" y="30" width="20" height="40"/>
+          <rect x="50" y="30" width="20" height="40"/>
+          <rect x="70" y="30" width="20" height="40"/>
+          <path d="M10 30 L50 10 L90 30"/>
+        </svg>
+      </div>
+      <div class="principle">
+        <div class="num">04</div>
+        <h3>Смета фиксируется<br>в договоре</h3>
+        <p>Цены за этапы прописаны до начала работ. Меняются только если меняется ТЗ — по вашей подписи. Скрытых строк нет.</p>
+        <svg class="icon" viewBox="0 0 100 80" fill="none" stroke="#15171a" stroke-width="1.5">
+          <rect x="20" y="10" width="60" height="60"/>
+          <line x1="28" y1="24" x2="64" y2="24"/>
+          <line x1="28" y1="36" x2="56" y2="36"/>
+          <line x1="28" y1="48" x2="60" y2="48"/>
+          <line x1="28" y1="60" x2="48" y2="60"/>
+          <circle cx="74" cy="60" r="8" fill="#c98a1e" stroke="none"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     TECHNOLOGY
+     ===================================================== -->
+<section class="tech" id="tech">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="label ochre">02 · технология</div>
+        <h2>Что внутри стены —<br>и почему именно так.</h2>
+      </div>
+      <div class="meta">материалы · мм<br>теплопроводность · w/m·K</div>
+    </div>
+
+    <div class="tech-grid">
+      <div class="tech-layers framed">
+        <span class="corner-bl"></span><span class="corner-br"></span>
+        <div class="layer">
+          <div class="lnum">01</div>
+          <div class="lthick">400<small>мм</small></div>
+          <div>
+            <div class="lname">Газобетон D500</div>
+            <div class="ldesc">Несущая стена. Один блок без мостиков холода. λ ≈ 0.12.</div>
+          </div>
+        </div>
+        <div class="layer">
+          <div class="lnum">02</div>
+          <div class="lthick">400<small>мм</small></div>
+          <div>
+            <div class="lname">Арболит-бетон (кровля)</div>
+            <div class="ldesc">Утепление плоской кровли. Не горит, не намокает.</div>
+          </div>
+        </div>
+        <div class="layer">
+          <div class="lnum">03</div>
+          <div class="lthick">220<small>мм</small></div>
+          <div>
+            <div class="lname">Ж/Б плиты перекрытия</div>
+            <div class="ldesc">Отметка +3.350. Без деревянных балок и скрипов.</div>
+          </div>
+        </div>
+        <div class="layer">
+          <div class="lnum">04</div>
+          <div class="lthick">600<small>мм</small></div>
+          <div>
+            <div class="lname">Ленточный фундамент</div>
+            <div class="ldesc">Армирование по проекту, расчёт под грунт участка.</div>
+          </div>
+        </div>
+        <div class="layer">
+          <div class="lnum">05</div>
+          <div class="lthick">300<small>мм</small></div>
+          <div>
+            <div class="lname">Подушка из щебня</div>
+            <div class="ldesc">Дренаж, защита от пучения. Геотекстиль обязателен.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tech-side">
+        <div class="label ochre">почему так</div>
+        <h2>Дом, который<br>переживёт нас <span class="ochre">обоих.</span></h2>
+        <p class="lead">
+          Мы не строим из бруса и каркаса. Сибирская зима требует капитала: газобетон не горит, не гниёт и не «гуляет». Через 30 лет это будет всё тот же дом — без капремонта стен.
+        </p>
+        <ul>
+          <li>Без скрытых деревянных конструкций — никакой биозащиты «раз в пять лет»</li>
+          <li>Стена без утеплителя снаружи — нечему отслаиваться или промокать</li>
+          <li>Плоская кровля с арболитом — холодный чердак не «съедает» тепло</li>
+          <li>Перекрытия из плит — выдерживают любую мебель, тяжёлые камины, ванны</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     PROCESS — 7 stages
+     ===================================================== -->
+<section class="process" id="process">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="label ochre">03 · этапы</div>
+        <h2>Семь этапов.<br>Один график. <span class="ochre">Без сюрпризов.</span></h2>
+      </div>
+      <div class="meta">total: 58 days<br>ref: sbs-38 / 2026</div>
+    </div>
+
+    <div class="stages">
+      <div class="stage framed">
+        <span class="corner-bl"></span><span class="corner-br"></span>
+        <div>
+          <div class="snum">01</div>
+          <div class="stitle">Договор</div>
+        </div>
+        <svg class="iso" viewBox="0 0 80 50" fill="none" stroke="#15171a" stroke-width="1">
+          <rect x="20" y="10" width="40" height="32"/>
+          <line x1="26" y1="20" x2="48" y2="20"/>
+          <line x1="26" y1="28" x2="44" y2="28"/>
+          <line x1="26" y1="36" x2="40" y2="36"/>
+        </svg>
+        <div class="sdays">3 дня</div>
+      </div>
+
+      <div class="stage framed">
+        <span class="corner-bl"></span><span class="corner-br"></span>
+        <div>
+          <div class="snum">02</div>
+          <div class="stitle">Котлован</div>
+        </div>
+        <svg class="iso" viewBox="0 0 80 50" fill="none" stroke="#15171a" stroke-width="1">
+          <path d="M5 35 L25 20 L55 20 L75 35"/>
+          <path d="M5 35 L25 50 L55 50 L75 35"/>
+          <path d="M25 20 L25 50 M55 20 L55 50"/>
+        </svg>
+        <div class="sdays">4 дня</div>
+      </div>
+
+      <div class="stage framed">
+        <span class="corner-bl"></span><span class="corner-br"></span>
+        <div>
+          <div class="snum">03</div>
+          <div class="stitle">Фундамент</div>
+        </div>
+        <svg class="iso" viewBox="0 0 80 50" fill="none" stroke="#15171a" stroke-width="1">
+          <path d="M40 8 L70 23 L40 38 L10 23 Z"/>
+          <path d="M10 23 L10 33 L40 48 L40 38"/>
+          <path d="M70 23 L70 33 L40 48"/>
+          <path d="M10 23 L40 38 L70 23" stroke-dasharray="2 2"/>
+        </svg>
+        <div class="sdays">10 дней</div>
+      </div>
+
+      <div class="stage framed">
+        <span class="corner-bl"></span><span class="corner-br"></span>
+        <div>
+          <div class="snum">04</div>
+          <div class="stitle">Стены</div>
+        </div>
+        <svg class="iso" viewBox="0 0 80 50" fill="none" stroke="#15171a" stroke-width="1">
+          <path d="M40 8 L70 23 L40 38 L10 23 Z"/>
+          <path d="M10 23 L10 33 L40 48 L40 38"/>
+          <path d="M70 23 L70 33 L40 48"/>
+          <path d="M40 8 L40 -2"/>
+          <rect x="30" y="14" width="20" height="14" fill="#c98a1e22"/>
+        </svg>
+        <div class="sdays">23 дня</div>
+      </div>
+
+      <div class="stage framed">
+        <span class="corner-bl"></span><span class="corner-br"></span>
+        <div>
+          <div class="snum">05</div>
+          <div class="stitle">Перекрытия</div>
+        </div>
+        <svg class="iso" viewBox="0 0 80 50" fill="none" stroke="#15171a" stroke-width="1">
+          <rect x="14" y="20" width="52" height="6"/>
+          <rect x="14" y="32" width="52" height="6"/>
+          <line x1="20" y1="20" x2="20" y2="38"/>
+          <line x1="30" y1="20" x2="30" y2="38"/>
+          <line x1="40" y1="20" x2="40" y2="38"/>
+          <line x1="50" y1="20" x2="50" y2="38"/>
+          <line x1="60" y1="20" x2="60" y2="38"/>
+        </svg>
+        <div class="sdays">14 дней</div>
+      </div>
+
+      <div class="stage framed">
+        <span class="corner-bl"></span><span class="corner-br"></span>
+        <div>
+          <div class="snum">06</div>
+          <div class="stitle">Кровля + фасад</div>
+        </div>
+        <svg class="iso" viewBox="0 0 80 50" fill="none" stroke="#15171a" stroke-width="1">
+          <path d="M40 6 L70 21 L40 36 L10 21 Z" fill="#c98a1e33"/>
+          <path d="M10 21 L10 31 L40 46 L40 36"/>
+          <path d="M70 21 L70 31 L40 46"/>
+        </svg>
+        <div class="sdays">16 дней</div>
+      </div>
+
+      <div class="stage framed">
+        <span class="corner-bl"></span><span class="corner-br"></span>
+        <div>
+          <div class="snum">07</div>
+          <div class="stitle">Сдача</div>
+        </div>
+        <svg class="iso" viewBox="0 0 80 50" fill="none" stroke="#15171a" stroke-width="1.2">
+          <path d="M40 6 L70 21 L40 36 L10 21 Z"/>
+          <path d="M10 21 L10 31 L40 46 L40 36"/>
+          <path d="M70 21 L70 31 L40 46"/>
+          <circle cx="56" cy="36" r="6" fill="#c98a1e" stroke="none"/>
+          <path d="M53 36 L55 38 L59 34" stroke="#15171a" stroke-width="1.4"/>
+        </svg>
+        <div class="sdays">1 день</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     FEATURED PROJECT
+     ===================================================== -->
+<section class="project" id="project">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="label on-dark">04 · текущий объект</div>
+        <h2>«Берёзовый», 136 м²<br><span class="ochre">Иркутская обл.</span></h2>
+      </div>
+      <div class="meta">type: 1 этаж + мансарда<br>handover: 2026 / Q3</div>
+    </div>
+
+    <div class="project-body">
+      <div class="gallery">
+        <div class="gallery-counter">01 / 04</div>
+
+        <div class="gallery-slide active" style="background-image: linear-gradient(135deg, #2a2c20 0%, #1a1c14 60%, #2a2c20 100%), repeating-linear-gradient(135deg, rgba(255,255,255,0.03) 0 12px, transparent 12px 24px); background-blend-mode: overlay;">
+          <div class="caption">фото · фасад · восточный · место под ваше изображение</div>
+        </div>
+        <div class="gallery-slide" style="background-image: linear-gradient(160deg, #25271e 0%, #14160f 60%, #25271e 100%);">
+          <div class="caption">фото · кровля · этап 06 · место под ваше изображение</div>
+        </div>
+        <div class="gallery-slide" style="background-image: linear-gradient(120deg, #1f211a 0%, #2a2c20 60%, #1a1c14 100%);">
+          <div class="caption">фото · интерьер · гостиная · место под ваше изображение</div>
+        </div>
+        <div class="gallery-slide" style="background-image: linear-gradient(180deg, #2a2c20 0%, #1d1f17 100%);">
+          <div class="caption">фото · участок · аэросъёмка · место под ваше изображение</div>
+        </div>
+
+        <div class="gallery-controls">
+          <button class="prev" aria-label="Предыдущее фото">←</button>
+          <button class="next" aria-label="Следующее фото">→</button>
+        </div>
+      </div>
+
+      <div class="project-side">
+        <div class="spec-card">
+          <div class="label">спецификация</div>
+          <h3>Дом «Берёзовый»</h3>
+          <div class="specs-list">
+            <div class="row"><span class="k">Площадь</span><span class="v">136 м²</span></div>
+            <div class="row"><span class="k">Этажность</span><span class="v">1 эт. + мансарда</span></div>
+            <div class="row"><span class="k">Стены</span><span class="v">газобетон 400</span></div>
+            <div class="row"><span class="k">Кровля</span><span class="v">плоская, арболит 400</span></div>
+            <div class="row"><span class="k">Фундамент</span><span class="v">лента, 600 мм</span></div>
+            <div class="row"><span class="k">Срок</span><span class="v">58 дней</span></div>
+          </div>
+        </div>
+
+        <div class="price-card">
+          <div class="label">стоимость</div>
+          <div class="price">8 160 000<small> ₽</small></div>
+          <p>Под ключ, с фундаментом, кровлей, окнами и инженерными сетями. Без отделки внутри — её делаете под себя.</p>
+          <a href="#contact" class="btn">Рассчитать на свой участок →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     INCLUDED
+     ===================================================== -->
+<section class="included" id="included">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="label ochre">05 · что входит</div>
+        <h2>В 60 000 ₽/м² —<br>и что <span class="ochre">не входит.</span></h2>
+      </div>
+      <div class="meta">honest pricing<br>no surprises</div>
+    </div>
+
+    <div class="included-grid">
+      <div class="included-col yes">
+        <h3>Входит</h3>
+        <ul>
+          <li><span class="marker">+</span><span>Проект и согласование посадки на участке</span></li>
+          <li><span class="marker">+</span><span>Земляные работы, котлован, подушка</span></li>
+          <li><span class="marker">+</span><span>Ленточный фундамент, армирование</span></li>
+          <li><span class="marker">+</span><span>Газобетонные стены 400 мм, перемычки</span></li>
+          <li><span class="marker">+</span><span>Ж/Б перекрытия, лестница на мансарду</span></li>
+          <li><span class="marker">+</span><span>Плоская кровля, утепление, гидроизоляция</span></li>
+          <li><span class="marker">+</span><span>Окна и входная дверь по проекту</span></li>
+          <li><span class="marker">+</span><span>Черновые инженерные сети (вода, канализация, электрика)</span></li>
+          <li><span class="marker">+</span><span>Отмостка, благоустройство в пятне дома</span></li>
+        </ul>
+      </div>
+      <div class="included-col no">
+        <h3>Не входит</h3>
+        <ul>
+          <li><span class="marker">−</span><span>Покупка и оформление участка</span></li>
+          <li><span class="marker">−</span><span>Геологические изыскания (~30–60 тыс. ₽)</span></li>
+          <li><span class="marker">−</span><span>Подключение электричества к ТП</span></li>
+          <li><span class="marker">−</span><span>Скважина, септик, газификация</span></li>
+          <li><span class="marker">−</span><span>Чистовая отделка стен, потолков, полов</span></li>
+          <li><span class="marker">−</span><span>Мебель, кухня, сантехника</span></li>
+          <li><span class="marker">−</span><span>Ландшафт и забор (можем сделать отдельно)</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     FAQ
+     ===================================================== -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="label ochre">06 · вопросы</div>
+        <h2>То, что обычно<br>спрашивают первым.</h2>
+      </div>
+      <div class="meta">7 вопросов<br>2 минуты</div>
+    </div>
+
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>
+          <span class="qnum">01</span>
+          <span class="qtext">У меня нет участка. Поможете подобрать?</span>
+          <span class="plus">+</span>
+        </summary>
+        <div class="faq-answer">
+          Да. Мы работаем по всей Иркутской области и знаем, какие участки годятся под капитальный дом, а какие — нет. Проверяем подъезд, грунты, доступность электричества и водоснабжения. Сами не риелторы — но направим к проверенному и проведём бесплатную консультацию.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span class="qnum">02</span>
+          <span class="qtext">Можно ли строить зимой при −38 °C?</span>
+          <span class="plus">+</span>
+        </summary>
+        <div class="faq-answer">
+          Земляные работы и фундамент — лучше до устойчивых морозов. Газобетон и перекрытия — кладём круглый год: используем зимние смеси, тепловые пушки и тенты. На графике это +5–10 дней относительно лета. Качество не страдает — проверяли на собственных объектах с 2013 года.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span class="qnum">03</span>
+          <span class="qtext">Что с гарантией?</span>
+          <span class="plus">+</span>
+        </summary>
+        <div class="faq-answer">
+          5 лет на конструктив (фундамент, стены, перекрытия, кровля). 2 года — на инженерные сети и окна. В договоре прописано, что мы устраняем замечания за свой счёт. Не «постараемся» — обязаны.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span class="qnum">04</span>
+          <span class="qtext">Сколько процентов нужно внести сразу?</span>
+          <span class="plus">+</span>
+        </summary>
+        <div class="faq-answer">
+          После подписания договора — 30% на закупку материалов на фундамент. Дальше — поэтапно: оплачиваете следующий этап только после акта по предыдущему. Никаких авансов «на всё сразу».
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span class="qnum">05</span>
+          <span class="qtext">Можно ли менять проект в процессе?</span>
+          <span class="plus">+</span>
+        </summary>
+        <div class="faq-answer">
+          До фундамента — почти что угодно. После — можно двигать перегородки, менять окна и двери, делать другую отделку. Любое изменение оформляем допсоглашением с пересчётом сметы — без сюрпризов в конце.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span class="qnum">06</span>
+          <span class="qtext">Есть ли свой проект, или строим по моему?</span>
+          <span class="plus">+</span>
+        </summary>
+        <div class="faq-answer">
+          И так, и так. У нас есть готовые проекты на 90–180 м² (можем адаптировать под ваш участок и состав семьи), либо строим по вашему проекту — проверим расчёты и при необходимости доработаем.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span class="qnum">07</span>
+          <span class="qtext">Можно посмотреть готовый дом?</span>
+          <span class="plus">+</span>
+        </summary>
+        <div class="faq-answer">
+          Да. У нас есть сданные объекты в Иркутске и пригороде. Согласуем визит с действующим клиентом — обычно в субботу. Заодно увидите, как ведёт себя дом через 3–10 лет эксплуатации.
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     CTA + CONTACT
+     ===================================================== -->
+<section class="cta" id="contact">
+  <div class="container cta-grid">
+    <div>
+      <div class="label on-dark">07 · заявка</div>
+      <h2>Смета<br>за <span class="ochre">24 часа.</span></h2>
+      <p class="lead">
+        Опишите участок и пожелания — Кузнецов А.В. лично соберёт техзадание, отдаст смету и график. Без презентаций и подписок. Если расчёт не подойдёт — никто никому ничего не должен.
+      </p>
+      <div class="cta-contacts">
+        <div>ИРКУТСК, УЛ. ШИРЯМОВА 10/4</div>
+        <div>ПН–ПТ 10:00–19:00 · СБ ПО ЗАПИСИ</div>
+        <div><a href="tel:+79953235878">+7 995 32 35 878</a></div>
+        <div><a href="mailto:sibstroy-sms@yandex.ru">sibstroy-sms@yandex.ru</a></div>
+      </div>
+    </div>
+
+    <div>
+      <form class="form" id="sbs38-lead-form" novalidate>
+        <div class="form-title">form · req-001</div>
+
+        <div class="field">
+          <label for="sbs38-f-name">Ваше имя</label>
+          <input id="sbs38-f-name" name="name" type="text" autocomplete="name" placeholder="Как к вам обращаться">
+          <div class="err">Укажите имя</div>
+        </div>
+
+        <div class="field">
+          <label for="sbs38-f-phone">Телефон</label>
+          <input id="sbs38-f-phone" name="phone" type="tel" autocomplete="tel" placeholder="+7 ___ ___-__-__">
+          <div class="err">Проверьте номер телефона</div>
+        </div>
+
+        <div class="field">
+          <label for="sbs38-f-land">Адрес участка или кадастровый номер</label>
+          <input id="sbs38-f-land" name="land" type="text" placeholder="напр., Иркутский р-н, Хомутово, 38:06:…">
+        </div>
+
+        <div class="field">
+          <label for="sbs38-f-area">Желаемая площадь дома, м²</label>
+          <input id="sbs38-f-area" name="area" type="text" inputmode="numeric" placeholder="например, 136">
+        </div>
+
+        <div class="field">
+          <label for="sbs38-f-comment">Коротко о доме</label>
+          <textarea id="sbs38-f-comment" name="comment" rows="3" placeholder="Этажность, состав семьи, особые пожелания"></textarea>
+        </div>
+
+        <div class="field" style="display:flex;gap:10px;align-items:flex-start;">
+          <input id="sbs38-f-consent" name="consent" type="checkbox" checked style="width:auto;margin-top:4px;flex-shrink:0;">
+          <label for="sbs38-f-consent" style="margin:0;font-size:10px;letter-spacing:0.06em;text-transform:none;color:var(--concrete);line-height:1.5;">
+            Согласен с обработкой персональных данных и политикой конфиденциальности
+          </label>
+          <div class="err" style="grid-column: 1 / -1;">Необходимо ваше согласие</div>
+        </div>
+
+        <button type="submit" class="btn submit">Получить смету за 24 часа →</button>
+
+        <div class="privacy">Кузнецов А.В. перезвонит в течение часа в рабочее время или утром следующего дня.</div>
+      </form>
+
+      <div class="form-success" id="sbs38-form-success">
+        <div class="check">✓</div>
+        <h3>Заявка принята</h3>
+        <p>Кузнецов А.В. перезвонит вам в течение часа. Если заявка пришла ночью — утром следующего дня.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="brand">СИБСТРОЙ<span class="accent">—38</span></div>
+        <p class="mini">ООО «Защита». Строительство домов из газобетона в Иркутске и Иркутской области с 2013 года. Член СРО. Лицензия МЧС на пожарную безопасность.</p>
+      </div>
+      <div>
+        <div class="col-title">Разделы</div>
+        <ul>
+          <li><a href="#why">Подход</a></li>
+          <li><a href="#tech">Технология</a></li>
+          <li><a href="#process">Этапы</a></li>
+          <li><a href="#project">Объект</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="col-title">Документы</div>
+        <ul>
+          <li><a href="#">Выписка из СРО</a></li>
+          <li><a href="#">Лицензия МЧС</a></li>
+          <li><a href="#">Договор-образец</a></li>
+          <li><a href="#">Политика данных</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="col-title">Контакты</div>
+        <ul>
+          <li><a href="tel:+79953235878">+7 995 32 35 878</a></li>
+          <li><a href="mailto:sibstroy-sms@yandex.ru">sibstroy-sms@yandex.ru</a></li>
+          <li>Ширямова 10/4, Иркутск</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2013–2026 ООО «ЗАЩИТА» · ИРКУТСК</span>
+      <span>СИБСТРОЙ38 / V.2026.05</span>
+    </div>
+  </div>
+</footer>
+</div>
+
+<script>
+/* СибСтрой38 — landing JS
+   Mobile nav, FAQ accordion, gallery slider, form validation + submit.
+*/
+
+(function () {
+  'use strict';
+  const scope = document.querySelector('.sbs38-root') || document;
+
+  // ---------- Mobile nav ----------
+  const navToggle = scope.querySelector('.nav-toggle');
+  const nav = scope.querySelector('.navbar nav');
+  if (navToggle && nav) {
+    navToggle.addEventListener('click', () => {
+      nav.classList.toggle('open');
+      navToggle.textContent = nav.classList.contains('open') ? 'Закрыть' : 'Меню';
+    });
+    nav.addEventListener('click', (e) => {
+      if (e.target.tagName === 'A') {
+        nav.classList.remove('open');
+        navToggle.textContent = 'Меню';
+      }
+    });
+  }
+
+  // ---------- Gallery slider ----------
+  const slides = scope.querySelectorAll('.gallery-slide');
+  const counter = scope.querySelector('.gallery-counter');
+  const prevBtn = scope.querySelector('.gallery-controls .prev');
+  const nextBtn = scope.querySelector('.gallery-controls .next');
+  let current = 0;
+
+  function showSlide(i) {
+    if (!slides.length) return;
+    current = ((i % slides.length) + slides.length) % slides.length;
+    slides.forEach((s, idx) => s.classList.toggle('active', idx === current));
+    if (counter) {
+      counter.textContent = String(current + 1).padStart(2, '0') + ' / ' + String(slides.length).padStart(2, '0');
+    }
+  }
+  if (prevBtn) prevBtn.addEventListener('click', () => showSlide(current - 1));
+  if (nextBtn) nextBtn.addEventListener('click', () => showSlide(current + 1));
+  showSlide(0);
+
+  // Auto-advance every 6s, pause on hover
+  let autoTimer = null;
+  const galleryEl = scope.querySelector('.gallery');
+  function startAuto() {
+    if (autoTimer) return;
+    autoTimer = setInterval(() => showSlide(current + 1), 6000);
+  }
+  function stopAuto() { clearInterval(autoTimer); autoTimer = null; }
+  if (galleryEl) {
+    galleryEl.addEventListener('mouseenter', stopAuto);
+    galleryEl.addEventListener('mouseleave', startAuto);
+    startAuto();
+  }
+
+  // ---------- FAQ — single-open accordion ----------
+  scope.querySelectorAll('.faq-item').forEach((item) => {
+    item.addEventListener('toggle', () => {
+      if (item.open) {
+        scope.querySelectorAll('.faq-item').forEach((other) => {
+          if (other !== item) other.open = false;
+        });
+      }
+    });
+  });
+
+  // ---------- Form ----------
+  const form = document.getElementById('sbs38-lead-form');
+  if (form) {
+    const success = document.getElementById('sbs38-form-success');
+
+    function setError(field, isErr) {
+      field.classList.toggle('error', isErr);
+    }
+    function clearErrors() {
+      form.querySelectorAll('.field.error').forEach((f) => f.classList.remove('error'));
+    }
+    function digits(s) { return (s || '').replace(/\D+/g, ''); }
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      clearErrors();
+
+      const name = form.elements['name'];
+      const phone = form.elements['phone'];
+      const consent = form.elements['consent'];
+
+      let ok = true;
+      if (!name.value.trim() || name.value.trim().length < 2) {
+        setError(name.closest('.field'), true);
+        ok = false;
+      }
+      const ph = digits(phone.value);
+      if (ph.length < 10 || ph.length > 12) {
+        setError(phone.closest('.field'), true);
+        ok = false;
+      }
+      if (consent && !consent.checked) {
+        setError(consent.closest('.field'), true);
+        ok = false;
+      }
+      if (!ok) return;
+
+      // Collect payload (placeholder — wire your backend here)
+      const payload = {
+        name: name.value.trim(),
+        phone: phone.value.trim(),
+        land: (form.elements['land'] && form.elements['land'].value || '').trim(),
+        area: (form.elements['area'] && form.elements['area'].value || '').trim(),
+        comment: (form.elements['comment'] && form.elements['comment'].value || '').trim(),
+        ts: new Date().toISOString(),
+      };
+
+      // Send to Tilda's webhook if available, or just simulate.
+      // Replace this with real submit (e.g. fetch to Bitrix / Yandex Forms).
+      try {
+        console.log('[sibstroy38] заявка:', payload);
+      } catch (_) {}
+
+      form.style.display = 'none';
+      if (success) success.classList.add('show');
+    });
+
+    // Phone mask (very light, +7 ___ ___-__-__)
+    const phoneInput = form.elements['phone'];
+    if (phoneInput) {
+      phoneInput.addEventListener('input', (e) => {
+        let d = digits(e.target.value);
+        if (d.startsWith('8')) d = '7' + d.slice(1);
+        if (!d.startsWith('7')) d = '7' + d;
+        d = d.slice(0, 11);
+        const parts = [
+          '+7',
+          d.length > 1 ? ' ' + d.slice(1, 4) : '',
+          d.length > 4 ? ' ' + d.slice(4, 7) : '',
+          d.length > 7 ? '-' + d.slice(7, 9) : '',
+          d.length > 9 ? '-' + d.slice(9, 11) : '',
+        ];
+        e.target.value = parts.join('');
+      });
+    }
+  }
+
+  // ---------- Reveal on scroll ----------
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    scope.querySelectorAll('[data-reveal]').forEach((el) => io.observe(el));
+  }
+})();
+
+</script>
+
+<!-- ▲▲▲ COPY-END ▲▲▲ -->
+
+</body>
+</html>

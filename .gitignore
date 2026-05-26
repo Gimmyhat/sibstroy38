@@ -1,0 +1,19 @@
+# Vercel
+.vercel/
+
+# Playwright test artifacts
+.playwright-cli/
+test-*.png
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Local env
+.env
+.env.local
