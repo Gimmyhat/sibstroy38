@@ -532,14 +532,27 @@ section { position: relative; }
 .gallery-slide {
   position: absolute; inset: 0;
   opacity: 0;
-  transition: opacity .5s ease;
+  transition: opacity .5s ease, filter .5s ease;
   background-size: cover;
   background-position: center;
   display: flex;
   align-items: flex-end;
   padding: 24px;
+  /* Подкручиваем фотореалистичные рендеры: контраст + насыщенность + тёплый сдвиг */
+  filter: contrast(1.08) saturate(1.18) brightness(1.02);
 }
 .gallery-slide.active { opacity: 1; }
+/* Тонкая виньетка по периметру тёмной секции — фокус на центре кадра */
+.gallery::after {
+  content: "";
+  position: absolute; inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at center, transparent 50%, rgba(15, 17, 20, 0.35) 100%),
+    linear-gradient(180deg, transparent 70%, rgba(15, 17, 20, 0.4) 100%);
+  z-index: 1;
+}
+.gallery-controls, .gallery-counter, .gallery-slide .caption { z-index: 2; }
 .gallery-slide .caption {
   font-family: var(--font-mono);
   font-size: 11px;
@@ -682,22 +695,46 @@ section { position: relative; }
 .construct-images figure {
   margin: 0;
   position: relative;
-  background: var(--paper-deep);
   border: 1px solid var(--paper-line);
   overflow: hidden;
   aspect-ratio: 4 / 3;
   display: flex;
   flex-direction: column;
+  /* Тёплая «бумажная» подложка с тонкой чертёжной сеткой — изометрия ложится на неё через mix-blend-mode и становится из «скриншота» «листом презентации» */
+  background-color: #ede9df;
+  background-image:
+    linear-gradient(135deg, rgba(201, 138, 30, 0.06) 0%, transparent 35%, transparent 65%, rgba(21, 23, 26, 0.04) 100%),
+    linear-gradient(rgba(21, 23, 26, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(21, 23, 26, 0.035) 1px, transparent 1px);
+  background-size: 100% 100%, 24px 24px, 24px 24px;
+  box-shadow:
+    inset 0 0 60px rgba(21, 23, 26, 0.06),
+    0 1px 2px rgba(21, 23, 26, 0.04),
+    0 8px 24px -12px rgba(21, 23, 26, 0.18);
+  transition: box-shadow .3s ease, transform .3s ease;
+}
+.construct-images figure:hover {
+  box-shadow:
+    inset 0 0 60px rgba(21, 23, 26, 0.04),
+    0 1px 2px rgba(21, 23, 26, 0.06),
+    0 16px 36px -14px rgba(21, 23, 26, 0.32);
+  transform: translateY(-2px);
 }
 .construct-images img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  background: linear-gradient(135deg, #f4f2ec 0%, #e8e5dd 100%);
   display: block;
-  transition: transform .4s ease;
+  /* Multiply: серый/белый фон скриншота пропадает, изометрия "впитывается" в тёплую подложку.
+     filter: усиление контраста и насыщенности оживляет блёклый рендер. */
+  mix-blend-mode: multiply;
+  filter: contrast(1.18) saturate(1.25) brightness(1.04);
+  transition: transform .4s ease, filter .3s ease;
 }
-.construct-images figure:hover img { transform: scale(1.03); }
+.construct-images figure:hover img {
+  transform: scale(1.04);
+  filter: contrast(1.22) saturate(1.35) brightness(1.06);
+}
 .construct-images figcaption {
   position: absolute;
   bottom: 0; left: 0; right: 0;
@@ -751,10 +788,17 @@ section { position: relative; }
 }
 .plans-gallery {
   position: relative;
-  background: var(--paper);
   border: 1.5px solid var(--ink);
   min-height: 480px;
   overflow: hidden;
+  /* Тёплая подложка с чертёжной сеткой — серый фон 3D-плана не контрастирует с белым, а ложится на бумагу */
+  background-color: #ede9df;
+  background-image:
+    linear-gradient(135deg, rgba(201, 138, 30, 0.05) 0%, transparent 40%),
+    linear-gradient(rgba(21, 23, 26, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(21, 23, 26, 0.04) 1px, transparent 1px);
+  background-size: 100% 100%, 32px 32px, 32px 32px;
+  box-shadow: inset 0 0 80px rgba(21, 23, 26, 0.06);
 }
 .plans-slide {
   position: absolute; inset: 0;
@@ -763,7 +807,9 @@ section { position: relative; }
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  background-color: var(--paper);
+  /* Без фона — multiply поверх .plans-gallery подложки */
+  mix-blend-mode: multiply;
+  filter: contrast(1.12) saturate(1.2) brightness(1.03);
 }
 .plans-slide.active { opacity: 1; }
 .plans-controls {
