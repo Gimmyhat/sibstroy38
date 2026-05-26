@@ -271,19 +271,22 @@ section { position: relative; }
   padding: clamp(18px, 1.8vw, 24px);
 }
 
-/* Коллаж: главный лист слева + столбик из 3 миниатюр справа */
+/* Коллаж 2x2: 4 листа равного размера */
 .hero-collage {
   display: grid;
-  grid-template-columns: 1.55fr 1fr;
-  gap: 10px;
+  gap: 12px;
   margin: clamp(14px, 1.6vw, 18px) 0 clamp(12px, 1.4vw, 16px);
   flex: 1;
   min-height: 0;
 }
-.hero-collage-main,
-.hero-collage-mini {
+.hero-collage-2x2 {
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+.hero-collage-tile {
   position: relative;
   display: block;
+  min-height: 0;
   background: #f6f4ee;
   border: 1px solid rgba(21, 23, 26, 0.1);
   overflow: hidden;
@@ -293,8 +296,7 @@ section { position: relative; }
   transition: transform .25s ease, box-shadow .25s ease;
   cursor: pointer;
 }
-.hero-collage-main img,
-.hero-collage-mini img {
+.hero-collage-tile img {
   display: block;
   width: 100%;
   height: 100%;
@@ -305,21 +307,11 @@ section { position: relative; }
   mix-blend-mode: multiply;
   filter: contrast(1.15) brightness(1.02);
 }
-.hero-collage-main { aspect-ratio: 4 / 3; }
-.hero-collage-main:hover,
-.hero-collage-mini:hover {
+.hero-collage-tile:hover {
   transform: translateY(-2px);
   box-shadow:
     0 1px 0 rgba(21, 23, 26, 0.05),
     0 22px 36px -18px rgba(21, 23, 26, 0.45);
-}
-.hero-collage-stack {
-  display: grid;
-  grid-template-rows: repeat(3, 1fr);
-  gap: 10px;
-}
-.hero-collage-mini {
-  aspect-ratio: auto;
 }
 .hero-collage-label {
   position: absolute;
@@ -334,18 +326,13 @@ section { position: relative; }
   border: 1px solid rgba(21, 23, 26, 0.08);
   pointer-events: none;
 }
-.hero-collage-mini .hero-collage-label {
-  font-size: 8px;
-  padding: 2px 6px;
-}
 
 @media (max-width: 900px) {
   .hero-grid { grid-template-columns: 1fr; }
   .hero-blueprint-real { margin-top: 24px; }
 }
 @media (max-width: 560px) {
-  .hero-collage { grid-template-columns: 1fr; }
-  .hero-collage-stack { grid-template-columns: repeat(3, 1fr); grid-template-rows: auto; }
+  .hero-collage-2x2 { grid-template-rows: auto; }
 }
 
 /* Blueprint */
