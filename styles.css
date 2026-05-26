@@ -283,6 +283,10 @@ section { position: relative; }
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
 }
+.hero-collage-1x2 {
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+}
 .hero-collage-tile {
   position: relative;
   display: block;
@@ -333,6 +337,7 @@ section { position: relative; }
 }
 @media (max-width: 560px) {
   .hero-collage-2x2 { grid-template-rows: auto; }
+  .hero-collage-1x2 { grid-template-rows: auto; }
 }
 
 /* Blueprint */
