@@ -72,6 +72,48 @@
              '.plans-counter',
              { auto: false });
 
+  // ---------- Stages carousel (slide + clickable timeline) ----------
+  const stagesRoot = document.querySelector('[data-stages]');
+  if (stagesRoot) {
+    const slides = stagesRoot.querySelectorAll('.stage-slide');
+    const dots = stagesRoot.querySelectorAll('.stage-dot');
+    const counter = stagesRoot.querySelector('.stages-counter');
+    const prevBtn = stagesRoot.querySelector('.stages-buttons .prev');
+    const nextBtn = stagesRoot.querySelector('.stages-buttons .next');
+    const total = slides.length;
+    let idx = 0;
+
+    function showStage(i) {
+      idx = ((i % total) + total) % total;
+      slides.forEach((s, k) => s.classList.toggle('active', k === idx));
+      dots.forEach((d, k) => {
+        const on = k === idx;
+        d.classList.toggle('active', on);
+        d.setAttribute('aria-selected', on ? 'true' : 'false');
+      });
+      if (counter) {
+        counter.textContent =
+          String(idx + 1).padStart(2, '0') + ' / ' +
+          String(total).padStart(2, '0');
+      }
+    }
+
+    if (prevBtn) prevBtn.addEventListener('click', () => showStage(idx - 1));
+    if (nextBtn) nextBtn.addEventListener('click', () => showStage(idx + 1));
+    dots.forEach((d) => {
+      d.addEventListener('click', () => {
+        const i = parseInt(d.dataset.index, 10);
+        if (!Number.isNaN(i)) showStage(i);
+      });
+    });
+    stagesRoot.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') { showStage(idx - 1); }
+      else if (e.key === 'ArrowRight') { showStage(idx + 1); }
+    });
+
+    showStage(0);
+  }
+
   // ---------- FAQ — single-open accordion ----------
   document.querySelectorAll('.faq-item').forEach((item) => {
     item.addEventListener('toggle', () => {
