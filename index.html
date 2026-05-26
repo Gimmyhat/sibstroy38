@@ -50,43 +50,21 @@
      HERO
      ===================================================== -->
 <section class="hero">
-  <div class="container">
-    <div class="hero-intro">
+  <div class="container hero-grid">
+    <div>
       <div class="hero-tags">
         <span class="tag">doc · 01</span>
         <span class="tag">rev · 2026.05</span>
         <span class="tag ochre">scale · 1:1</span>
       </div>
-      <h1 class="display hero-h1">
-        ДОМ — ЭТО <span class="ochre">ИНЖЕНЕРИЯ.</span>
+      <h1 class="display">
+        ДОМ —<br>
+        ЭТО<br>
+        <span class="ochre">ИНЖЕНЕРИЯ.</span>
       </h1>
       <p class="lead">
         Строим дома в Иркутске и Иркутской области с 16 сентября 2013 года. Газобетон D500 400 мм, монолитная фундаментная плита, ж/б перекрытия, плоская кровля с утеплением 400 мм арболит-бетона. Возможен одноэтажный или двухэтажный вариант. Каждый объект ведёт лично директор — Кузнецов А.В.
       </p>
-    </div>
-
-    <!-- Hero blueprint — обложка реального проекта АР, ООО «Защита» -->
-    <figure class="blueprint framed hero-blueprint-real">
-      <span class="corner-bl"></span><span class="corner-br"></span>
-      <div class="blueprint-head">
-        <span>АР · обложка проекта</span>
-        <span>СибСтрой38 / 2026.05</span>
-        <span>лист 01 / 41</span>
-      </div>
-      <div class="hero-blueprint-img-wrap">
-        <img src="img/renders/hero-blueprint.webp"
-             alt="Проект одноэтажного дома, обложка раздела АР · ООО «Защита»"
-             loading="eager"
-             decoding="async" />
-      </div>
-      <figcaption class="blueprint-legend">
-        <span>реальный лист проектной документации</span>
-        <span>1 этаж · плоская кровля · газобетон 400</span>
-        <span>штамп · ООО «Защита»</span>
-      </figcaption>
-    </figure>
-
-    <div class="hero-meta">
       <div class="hero-specs">
         <div>
           <div class="label">Стены</div>
@@ -106,6 +84,44 @@
         <a href="#process" class="btn btn-ghost">Как мы работаем</a>
       </div>
     </div>
+
+    <!-- Hero blueprint — коллаж из реальных листов АР, ООО «Защита» -->
+    <figure class="blueprint framed hero-blueprint-real">
+      <span class="corner-bl"></span><span class="corner-br"></span>
+      <div class="blueprint-head">
+        <span>АР · 4 листа</span>
+        <span>СибСтрой38 / 2026.05</span>
+        <span>раздел АР</span>
+      </div>
+      <div class="hero-collage">
+        <a href="#blueprints" class="hero-collage-main" aria-label="Обложка проекта одноэтажного дома">
+          <img src="img/renders/hero-blueprint.webp"
+               alt="Обложка раздела АР: проект одноэтажного дома"
+               loading="eager"
+               decoding="async" />
+          <span class="hero-collage-label mono">01 · обложка</span>
+        </a>
+        <div class="hero-collage-stack">
+          <a href="#blueprints" class="hero-collage-mini" aria-label="Фасад В-А с отметками">
+            <img src="img/process/process-20.webp" alt="Фасад В-А с отметками высот" loading="lazy" />
+            <span class="hero-collage-label mono">02 · фасад</span>
+          </a>
+          <a href="#blueprints" class="hero-collage-mini" aria-label="Кладочный план несущих стен">
+            <img src="img/process/process-01.webp" alt="Кладочный план несущих стен" loading="lazy" />
+            <span class="hero-collage-label mono">03 · план</span>
+          </a>
+          <a href="#blueprints" class="hero-collage-mini" aria-label="Ведомость окон и дверей">
+            <img src="img/process/process-15.webp" alt="Ведомость окон и дверей" loading="lazy" />
+            <span class="hero-collage-label mono">04 · ведомость</span>
+          </a>
+        </div>
+      </div>
+      <figcaption class="blueprint-legend">
+        <span>реальные листы проектной документации</span>
+        <span>1 / 41 · полный комплект — раздел «Документация»</span>
+        <span>штамп · ООО «Защита»</span>
+      </figcaption>
+    </figure>
   </div>
 </section>
 
