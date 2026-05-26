@@ -31,11 +31,11 @@
     <div class="container navbar-inner">
       <nav id="primary-nav">
         <a href="#tech">01 / Технология</a>
-        <a href="#process">02 / Этапы</a>
-        <a href="#project">03 / Проект</a>
-        <a href="#plans">04 / Планировки</a>
-        <a href="#blueprints">05 / Документация</a>
-        <a href="#faq">06 / Вопросы</a>
+        <a href="#constructs">02 / Конструктивы</a>
+        <a href="#process">03 / Этапы</a>
+        <a href="#project">04 / Проект</a>
+        <a href="#plans">05 / Планировки</a>
+        <a href="#blueprints">06 / Документация</a>
         <a href="#contact">07 / Заявка</a>
       </nav>
       <button class="nav-toggle" aria-controls="primary-nav" aria-label="Меню">Меню</button>
@@ -324,6 +324,130 @@
 </section>
 
 <!-- =====================================================
+     CONSTRUCTS — Визуализация конструктивов проекта
+     ===================================================== -->
+<section class="constructs" id="constructs">
+  <div class="container">
+    <div class="section-divider"></div>
+    <div class="section-head">
+      <div>
+        <div class="label ochre">02 · конструктивы</div>
+        <h2>Визуализация<br>конструктивов <span class="ochre">проекта.</span></h2>
+      </div>
+      <div class="meta">4 узла<br>фундамент → крыша</div>
+    </div>
+
+    <p class="constructs-lead">
+      Изометрические 3D-разрезы рабочего проекта с подписями материалов и арматуры — те же чертежи, что идут на стройплощадку. Так выглядит каждый узел изнутри.
+    </p>
+
+    <!-- 01 Фундамент -->
+    <div class="construct-block">
+      <div class="construct-head">
+        <div class="cnum">01</div>
+        <div>
+          <h3>Фундамент</h3>
+          <p>Котлован, щебневая подушка, арматурный каркас, монолитная бетонная плита</p>
+        </div>
+      </div>
+      <div class="construct-images grid-3">
+        <figure>
+          <img loading="lazy" src="img/constructs/fnd-plate-3d.jpg" alt="Монолитная фундаментная плита, 3D-визуализация">
+          <figcaption>3D · плита по проекту</figcaption>
+        </figure>
+        <figure>
+          <img loading="lazy" src="img/constructs/fnd-section-1.png" alt="Разрез фундаментной плиты: грунт, щебень, гидроизоляция, арматура, бетон">
+          <figcaption>разрез · слои подложки</figcaption>
+        </figure>
+        <figure>
+          <img loading="lazy" src="img/constructs/fnd-section-2.png" alt="Разрез фундаментной плиты, армирование">
+          <figcaption>разрез · армирование плиты</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <!-- 02 Стены -->
+    <div class="construct-block">
+      <div class="construct-head">
+        <div class="cnum">02</div>
+        <div>
+          <h3>Стены из газобетона</h3>
+          <p>Кладочный план несущих стен и перегородок · газобетон D500 толщиной 400 мм</p>
+        </div>
+      </div>
+      <div class="construct-images grid-3">
+        <figure>
+          <img loading="lazy" src="img/constructs/walls-box-top.jpg" alt="Коробка газобетонных стен с проёмами окон и дверей, 3D">
+          <figcaption>3D · коробка стен сверху</figcaption>
+        </figure>
+        <figure>
+          <img loading="lazy" src="img/constructs/walls-box-side.jpg" alt="Газобетонная коробка дома вид сбоку с оконными проёмами">
+          <figcaption>3D · фасадные проёмы</figcaption>
+        </figure>
+        <figure>
+          <img loading="lazy" src="img/constructs/walls-section.png" alt="Разрез стены: газобетон D500 400мм, армирование, клеевой шов, утеплитель, штукатурка">
+          <figcaption>разрез · слои стены с подписями</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <!-- 03 Перекрытия -->
+    <div class="construct-block">
+      <div class="construct-head">
+        <div class="cnum">03</div>
+        <div>
+          <h3>Плиты перекрытия</h3>
+          <p>Раскладка ж/б плит перекрытия на отметке +3.350 · армопояс 300 мм</p>
+        </div>
+      </div>
+      <div class="construct-images grid-3">
+        <figure>
+          <img loading="lazy" src="img/constructs/slabs-top-3d.jpg" alt="Уложенные ж/б плиты перекрытия на коробке стен, вид сверху">
+          <figcaption>3D · раскладка плит</figcaption>
+        </figure>
+        <figure>
+          <img loading="lazy" src="img/constructs/slabs-node.png" alt="Узел соединения плиты перекрытия со стеной: армопояс, арматура 12-А-III, газоблок D500">
+          <figcaption>разрез · узел стена/плита</figcaption>
+        </figure>
+        <figure>
+          <img loading="lazy" src="img/constructs/slabs-house-3d.png" alt="Объёмный вид дома с уложенным перекрытием и парапетом">
+          <figcaption>3D · готовый объём</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <!-- 04 Кровля -->
+    <div class="construct-block">
+      <div class="construct-head">
+        <div class="cnum">04</div>
+        <div>
+          <h3>Устройство плоской крыши</h3>
+          <p>Кровля с утеплением 400 мм арболит-бетона, разуклонкой водоотведения и ПВХ-мембраной</p>
+        </div>
+      </div>
+      <div class="construct-images grid-4">
+        <figure>
+          <img loading="lazy" src="img/constructs/roof-1.png" alt="Дом с плоской кровлей в 3D с подписями: парапетная воронка, вентканал, фановая труба, водосток, светильник, планкен, отмостка, крыльцо">
+          <figcaption>3D · фасад с обозначениями</figcaption>
+        </figure>
+        <figure>
+          <img loading="lazy" src="img/constructs/roof-4.png" alt="Дом с плоской кровлей, другой ракурс">
+          <figcaption>3D · вид с террасы</figcaption>
+        </figure>
+        <figure>
+          <img loading="lazy" src="img/constructs/roof-2.png" alt="Разрез кровли: ПВХ-мембрана, геотекстиль, XPS, арболит с уклоном, плита перекрытия">
+          <figcaption>разрез · кровельный пирог</figcaption>
+        </figure>
+        <figure>
+          <img loading="lazy" src="img/constructs/roof-3.png" alt="Разрез парапета: армирующий пояс, газоблок D500, армопескобетон 300мм">
+          <figcaption>разрез · парапет и узел</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
      PROCESS — 7 stages
      ===================================================== -->
 <section class="process" id="process">
@@ -331,6 +455,7 @@
     <div class="section-head">
       <div>
         <div class="label ochre">03 · этапы</div>
+
         <h2>Семь этапов.<br>Один график. <span class="ochre">Без сюрпризов.</span></h2>
       </div>
       <div class="meta">total: 58 дней<br>+ опционально: подбор участка<br>и геодезия до старта</div>
@@ -518,9 +643,10 @@
      ===================================================== -->
 <section class="plans" id="plans">
   <div class="container">
+    <div class="section-divider"></div>
     <div class="section-head">
       <div>
-        <div class="label ochre">04 · планировки</div>
+        <div class="label ochre">05 · планировки</div>
         <h2>Дизайн планировки —<br><span class="ochre">по вашим пожеланиям.</span></h2>
       </div>
       <div class="meta">наш дизайнер<br>адаптирует под состав семьи</div>
@@ -552,9 +678,10 @@
      ===================================================== -->
 <section class="blueprints" id="blueprints">
   <div class="container">
+    <div class="section-divider"></div>
     <div class="section-head">
       <div>
-        <div class="label ochre">05 · документация</div>
+        <div class="label ochre">06 · документация</div>
         <h2>Альбом проектной<br>документации. <span class="ochre">Раздел АР.</span></h2>
       </div>
       <div class="meta">20 листов<br>визуализация → ведомости</div>
@@ -581,9 +708,10 @@
      ===================================================== -->
 <section class="included" id="included">
   <div class="container">
+    <div class="section-divider"></div>
     <div class="section-head">
       <div>
-        <div class="label ochre">06 · что входит</div>
+        <div class="label ochre">что входит</div>
         <h2>В 60 000 ₽/м² —<br>и что <span class="ochre">не входит.</span></h2>
       </div>
       <div class="meta">honest pricing<br>детали — в договоре</div>
@@ -625,9 +753,10 @@
      ===================================================== -->
 <section class="faq" id="faq">
   <div class="container">
+    <div class="section-divider"></div>
     <div class="section-head">
       <div>
-        <div class="label ochre">07 · вопросы</div>
+        <div class="label ochre">вопросы</div>
         <h2>То, что обычно<br>спрашивают первым.</h2>
       </div>
       <div class="meta">7 вопросов<br>2 минуты</div>
@@ -720,7 +849,7 @@
 <section class="cta" id="contact">
   <div class="container cta-grid">
     <div>
-      <div class="label on-dark">08 · заявка</div>
+      <div class="label on-dark">07 · заявка</div>
       <h2>Расчёт сметы<br>и <span class="ochre">графика.</span></h2>
       <p class="lead">
         Опишите участок и пожелания — Кузнецов А.В. лично соберёт техзадание, отдаст смету и график строительства. Без презентаций и подписок. Если расчёт не подойдёт — никто никому ничего не должен.

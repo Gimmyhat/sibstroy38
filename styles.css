@@ -498,11 +498,22 @@ section { position: relative; }
    FEATURED PROJECT
    ============================================================ */
 .project {
-  padding: clamp(64px, 8vw, 96px) 0;
+  padding: clamp(72px, 9vw, 112px) 0 clamp(80px, 10vw, 128px);
   background: var(--ink);
   color: var(--paper);
   border-bottom: 1px solid var(--ink);
   background-image: none;
+  position: relative;
+}
+.project::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -1px;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 4px;
+  background: var(--ochre);
 }
 .project .section-head h2 { color: var(--paper); }
 .project .section-head .meta { color: var(--concrete); }
@@ -611,6 +622,113 @@ section { position: relative; }
 .price-card .btn { width: 100%; background: var(--ink); border-color: var(--ink); color: var(--paper); }
 .price-card .btn:hover { background: var(--paper); border-color: var(--paper); color: var(--ink); }
 
+/* ============================================================
+   CONSTRUCTS — Визуализация конструктивов
+   ============================================================ */
+.constructs {
+  padding: clamp(72px, 9vw, 112px) 0 clamp(64px, 8vw, 96px);
+  border-bottom: 1px solid var(--ink);
+  background:
+    radial-gradient(circle at 12% 0%, rgba(201, 138, 30, 0.04), transparent 40%),
+    var(--paper);
+}
+.constructs-lead {
+  margin: 0 0 48px;
+  max-width: 760px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+.construct-block {
+  margin-top: clamp(40px, 5vw, 64px);
+  padding-top: clamp(32px, 4vw, 48px);
+  border-top: 1px solid var(--paper-line);
+}
+.construct-block:first-of-type { border-top: none; padding-top: 0; margin-top: 0; }
+.construct-head {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 24px;
+  align-items: baseline;
+  margin-bottom: 28px;
+}
+.construct-head .cnum {
+  font-family: var(--font-mono);
+  font-size: 44px;
+  font-weight: 700;
+  color: var(--ochre);
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+.construct-head h3 {
+  font-size: clamp(24px, 2.6vw, 32px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+.construct-head p {
+  margin: 8px 0 0;
+  font-size: 14px;
+  color: var(--ink-soft);
+  line-height: 1.5;
+  max-width: 720px;
+}
+.construct-images {
+  display: grid;
+  gap: 16px;
+}
+.construct-images.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.construct-images.grid-4 { grid-template-columns: repeat(4, 1fr); }
+.construct-images figure {
+  margin: 0;
+  position: relative;
+  background: var(--paper-deep);
+  border: 1px solid var(--paper-line);
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  display: flex;
+  flex-direction: column;
+}
+.construct-images img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: linear-gradient(135deg, #f4f2ec 0%, #e8e5dd 100%);
+  display: block;
+  transition: transform .4s ease;
+}
+.construct-images figure:hover img { transform: scale(1.03); }
+.construct-images figcaption {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 10px 14px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink);
+  background: rgba(236, 234, 229, 0.92);
+  border-top: 1px solid var(--paper-line);
+  backdrop-filter: blur(4px);
+}
+
+/* ============================================================
+   SECTION DIVIDER — visual breath between sections
+   ============================================================ */
+.section-divider {
+  height: 1px;
+  background: var(--paper-line);
+  margin: 0 0 clamp(48px, 6vw, 72px);
+  position: relative;
+}
+.section-divider::before {
+  content: "";
+  position: absolute;
+  left: 0; top: -1px;
+  width: 80px; height: 3px;
+  background: var(--ochre);
+}
+
 /* Stages footnote */
 .stages-note {
   margin-top: 22px;
@@ -625,8 +743,10 @@ section { position: relative; }
    PLANS — Дизайн планировки
    ============================================================ */
 .plans {
-  padding: clamp(64px, 8vw, 96px) 0;
-  background: var(--paper-deep);
+  padding: clamp(80px, 10vw, 128px) 0 clamp(64px, 8vw, 96px);
+  background:
+    radial-gradient(circle at 88% 10%, rgba(201, 138, 30, 0.05), transparent 45%),
+    var(--paper);
   border-bottom: 1px solid var(--ink);
 }
 .plans-gallery {
@@ -685,8 +805,11 @@ section { position: relative; }
    BLUEPRINTS — Альбом проектной документации
    ============================================================ */
 .blueprints {
-  padding: clamp(64px, 8vw, 96px) 0;
+  padding: clamp(80px, 10vw, 128px) 0 clamp(64px, 8vw, 96px);
   border-bottom: 1px solid var(--ink);
+  background:
+    radial-gradient(circle at 5% 90%, rgba(21, 23, 26, 0.04), transparent 40%),
+    var(--paper-deep);
 }
 .blueprints-lead {
   margin: 0 0 36px;
